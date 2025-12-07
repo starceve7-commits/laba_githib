@@ -2,44 +2,46 @@
 #include <vector>
 #include <string>
 #include <fstream>
+
 using namespace std;
 
-// Чтение строк из файла в вектор
-vector<string> readFromFile(const string& filename) {
-    vector<string> lines;
-    ifstream file(filename);
 
-    if (!file.is_open()) {
-        cerr << "error: " << filename << endl;
-        return lines;
-    }
-
-    string line;
-    while (getline(file, line)) {
-        lines.push_back(line);
-    }
-
-    file.close();
-    return lines;  // Просто возвращаем вектор без отладочного вывода
 }
 
-//  Вывод вектора строк на экран
+//  Г‚Г»ГўГ®Г¤ ГўГҐГЄГІГ®Г°Г  Г±ГІГ°Г®ГЄ Г­Г  ГЅГЄГ°Г Г­
 void printToScreen(const vector<string>& lines) {
-    // TODO: реализация вывода на экран
-    cout << "Функция printToScreen() пока не реализована." << endl;
+    if (lines.empty()) {
+        cout << "vector 0." << endl;
+        return;
+    }
+
+    cout << "=== window (" << lines.size() << " string) ===" << endl;
+    for (size_t i = 0; i < lines.size(); ++i) {
+        cout << "[" << i + 1 << "] " << lines[i] << endl;
+    }
+    cout << "=== end ===" << endl;
 }
 
-// Запись вектора строк в файл (заглушка - реализует User2)
+// Г‡Г ГЇГЁГ±Гј ГўГҐГЄГІГ®Г°Г  Г±ГІГ°Г®ГЄ Гў ГґГ Г©Г« (Г§Г ГЈГ«ГіГёГЄГ  - Г°ГҐГ Г«ГЁГ§ГіГҐГІ User2)
 void writeToFile(const vector<string>& lines, const string& filename) {
-    // TODO: реализация записи в файл
-    cout << "Функция writeToFile() пока не реализована." << endl;
+    ofstream file(filename);
+    if (!file.is_open()) {
+        cerr << "erorr: " << filename << endl;
+        return;
+    }
+
+    for (const auto& line : lines) {
+        file << line << endl;
+    }
+    file.close();
+    cout << "good " << lines.size() << " string: " << filename << endl;
 }
 
 int main() {
     string inputFilename = "input.txt";
     string outputFilename = "output.txt";
 
-    // Каркас программы
+
     vector<string> lines = readFromFile(inputFilename);
     printToScreen(lines);
     writeToFile(lines, outputFilename);
