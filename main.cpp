@@ -4,13 +4,30 @@
 #include <fstream>
 using namespace std;
 // Чтение строк из файла в вектор
-vector <string> readFromFile(const string& filename) {
-    vector <string> lines;
-    // TODO: реализация чтения из файла
-    cout << "Функция readFromFile() пока не реализована." << endl;
-    return lines; // возвращаем пустой вектор для компиляции
-}
+vector<string> readFromFile(const string& filename) {
+    vector<string> lines;
+    ifstream file(filename);
 
+    if (!file.is_open()) {
+        cerr << "Ошибка открытия файла: " << filename << endl;
+        return lines;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        lines.push_back(line);
+    }
+
+    file.close();
+
+    // Временный вывод для отладки 
+    cout << "Debug (readFromFile): Прочитано " << lines.size() << " строк." << endl;
+    for (const auto& l : lines) {
+        scout << "  " << l << endl;
+    }
+
+    return lines;
+}
 // Вывод вектора строк на экран
 void printToScreen(const vector<string>& lines) {
     // TODO: реализация вывода на экран
