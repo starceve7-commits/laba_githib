@@ -5,15 +5,10 @@
 
 using namespace std;
 
-// Чтение строк из файла в вектор (
-vector<string> readFromFile(const string& filename) {
-    vector<string> lines;
-    // TODO: реализация чтения из файла
-    cout << "Функция readFromFile() пока не реализована." << endl;
-    return lines;
+
 }
 
-// Вывод вектора строк на экран
+//  Г‚Г»ГўГ®Г¤ ГўГҐГЄГІГ®Г°Г  Г±ГІГ°Г®ГЄ Г­Г  ГЅГЄГ°Г Г­
 void printToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
@@ -27,7 +22,7 @@ void printToScreen(const vector<string>& lines) {
     cout << "=== end ===" << endl;
 }
 
-// Запись вектора строк в файл
+// Г‡Г ГЇГЁГ±Гј ГўГҐГЄГІГ®Г°Г  Г±ГІГ°Г®ГЄ Гў ГґГ Г©Г« (Г§Г ГЈГ«ГіГёГЄГ  - Г°ГҐГ Г«ГЁГ§ГіГҐГІ User2)
 void writeToFile(const vector<string>& lines, const string& filename) {
     ofstream file(filename);
     if (!file.is_open()) {
@@ -46,10 +41,11 @@ int main() {
     string inputFilename = "input.txt";
     string outputFilename = "output.txt";
 
-    // ОСНОВНОЙ КОД ПРОГРАММЫ
+
     vector<string> lines = readFromFile(inputFilename);
     printToScreen(lines);
     writeToFile(lines, outputFilename);
 
     return 0;
+}
 }
