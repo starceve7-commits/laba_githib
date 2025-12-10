@@ -22,9 +22,9 @@ vector<string> readFromFile(const string& input) {
     }
 
     file.close();
-    return lines;  // Ïðîñòî âîçâðàùàåì âåêòîð áåç îòëàäî÷íîãî âûâîäà
+    return lines;  
 }
-//  Âûâîä âåêòîðà ñòðîê íà ýêðàí
+
 void printToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
@@ -38,7 +38,7 @@ void printToScreen(const vector<string>& lines) {
     cout << "=== end ===" << endl;
 }
 
-// Çàïèñü âåêòîðà ñòðîê â ôàéë (çàãëóøêà - ðåàëèçóåò User2)
+
 void writeToFile(const vector<string>& lines, const string& input) {
     ofstream file(filename);
     if (!file.is_open()) {
