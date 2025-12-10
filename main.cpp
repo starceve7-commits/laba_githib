@@ -7,7 +7,23 @@ using namespace std;
 
 
 }
+vector<string> readFromFile(const string& input) {
+    vector<string> lines;
+    ifstream file(filename);
 
+    if (!file.is_open()) {
+        cerr << "error: " << input << endl;
+        return lines;
+    }
+
+    string line;
+    while (getline(file, line)) {
+        lines.push_back(line);
+    }
+
+    file.close();
+    return lines;  // Ïðîñòî âîçâðàùàåì âåêòîð áåç îòëàäî÷íîãî âûâîäà
+}
 //  Âûâîä âåêòîðà ñòðîê íà ýêðàí
 void printToScreen(const vector<string>& lines) {
     if (lines.empty()) {
@@ -23,10 +39,10 @@ void printToScreen(const vector<string>& lines) {
 }
 
 // Çàïèñü âåêòîðà ñòðîê â ôàéë (çàãëóøêà - ðåàëèçóåò User2)
-void writeToFile(const vector<string>& lines, const string& filename) {
+void writeToFile(const vector<string>& lines, const string& input) {
     ofstream file(filename);
     if (!file.is_open()) {
-        cerr << "erorr: " << filename << endl;
+        cerr << "erorr: " << input << endl;
         return;
     }
 
@@ -34,7 +50,7 @@ void writeToFile(const vector<string>& lines, const string& filename) {
         file << line << endl;
     }
     file.close();
-    cout << "good " << lines.size() << " string: " << filename << endl;
+    cout << "good " << lines.size() << " string: " << input << endl;
 }
 
 int main() {
