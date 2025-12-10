@@ -8,6 +8,7 @@ using namespace std;
 
 }
 
+
 intToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
@@ -23,7 +24,7 @@ intToScreen(const vector<string>& lines) {
 
 
 void writeToFile(const vector<string>& lines, const string& input) {
-    ofstream file(filename);
+    ofstream file(input);
     if (!file.is_open()) {
         cerr << "erorr: " << input << endl;
         return;
