@@ -7,25 +7,7 @@ using namespace std;
 
 
 }
-vector<string> readFromFile(const string& input) {
-    vector<string> lines;
-    ifstream file(filename);
-
-    if (!file.is_open()) {
-        cerr << "error: " << input << endl;
-        return lines;
-    }
-
-    string line;
-    while (getline(file, line)) {
-        lines.push_back(line);
-    }
-
-    file.close();
-    return lines;  
-}
-
-void printToScreen(const vector<string>& lines) {
+intToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
         return;
