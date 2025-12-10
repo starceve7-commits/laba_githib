@@ -22,17 +22,6 @@ vector<string> readFromFile(const string& filename) {
     return lines;  
 }
 
-void printToScreen(const vector<string>& lines) {
-    
-    cout << "printToScreen()" << endl;
-}
-
-
-void writeToFile(const vector<string>& lines, const string& filename) {
-
-    cout << " writeToFile() " << endl;
-}
-
 int main() {
     string inputFilename = "input.txt";
     string outputFilename = "output.txt";
