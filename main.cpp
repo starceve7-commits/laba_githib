@@ -39,7 +39,7 @@ int main() {
     string inputFilename = "input.txt";
     string outputFilename = "output.txt";
 
-
+  
     vector<string> lines = readFromFile(inputFilename);
     printToScreen(lines);
     writeToFile(lines, outputFilename);
