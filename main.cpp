@@ -9,7 +9,7 @@ using namespace std;
 }
 
 
-void printToScreen(const vector<string>& lines) {
+intToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
         return;
@@ -34,14 +34,14 @@ void writeToFile(const vector<string>& lines, const string& input) {
         file << line << endl;
     }
     file.close();
-    cout << "good " << lines.size() << " string: " << filename << endl;
+    cout << "good " << lines.size() << " string: " << input << endl;
 }
 
 int main() {
     string inputFilename = "input.txt";
     string outputFilename = "output.txt";
 
-
+  
     vector<string> lines = readFromFile(inputFilename);
     printToScreen(lines);
     writeToFile(lines, outputFilename);
