@@ -4,7 +4,6 @@
 #include <fstream>
 using namespace std;
 
-// Чтение строк из файла в вектор
 vector<string> readFromFile(const string& filename) {
     vector<string> lines;
     ifstream file(filename);
@@ -22,7 +21,6 @@ vector<string> readFromFile(const string& filename) {
     file.close();
     return lines;  
 }
-
 
 void printToScreen(const vector<string>& lines) {
     
