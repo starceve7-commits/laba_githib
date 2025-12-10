@@ -8,7 +8,7 @@ using namespace std;
 
 }
 
-//  Âûâîä âåêòîðà ñòðîê íà ýêðàí
+
 void printToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
@@ -22,11 +22,11 @@ void printToScreen(const vector<string>& lines) {
     cout << "=== end ===" << endl;
 }
 
-// Çàïèñü âåêòîðà ñòðîê â ôàéë (çàãëóøêà - ðåàëèçóåò User2)
-void writeToFile(const vector<string>& lines, const string& filename) {
-    ofstream file(filename);
+
+void writeToFile(const vector<string>& lines, const string& input) {
+    ofstream file(input);
     if (!file.is_open()) {
-        cerr << "erorr: " << filename << endl;
+        cerr << "erorr: " << input << endl;
         return;
     }
 
