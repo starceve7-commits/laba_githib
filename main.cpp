@@ -7,6 +7,7 @@ using namespace std;
 
 
 }
+
 intToScreen(const vector<string>& lines) {
     if (lines.empty()) {
         cout << "vector 0." << endl;
